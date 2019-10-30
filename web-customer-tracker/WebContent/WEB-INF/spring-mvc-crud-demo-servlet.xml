@@ -15,7 +15,7 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
             
 	<!-- Step 3: Add support for component scanning -->
-	<context:component-scan base-package="com.mahi.springmvc" />
+	<context:component-scan base-package="com.mahi.springdemo.controller" />
 
 	<!-- Step 4: Add support for conversion, formatting and validation support -->
 	<mvc:annotation-driven/>
@@ -59,7 +59,10 @@
 	</bean>
 	
 	<!-- Enable configuration of transactional behaviour based on annotations -->
-	
 	<tx:annotation-driven transaction-manager="myTransactionManager"/>
+	
+	
+	<!-- Add support for reading web resources: css, images, js, etc ... -->
+	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 
 </beans>
